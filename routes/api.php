@@ -21,3 +21,4 @@ Route::apiResource('buses', 'BusController');
 Route::apiResource('routes', 'RouteController');
 Route::apiResource('tickets', 'TicketController');
 Route::get('routes/search/{query}', 'RouteController@searchRoute');
+Route::get('buses/search/{query}', 'BusController@searchBus');

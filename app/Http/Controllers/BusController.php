@@ -20,4 +20,14 @@ class BusController extends Controller
 
         return response()->json($bus);
     }
+
+    public function searchBus($query)
+    {
+        $search = Bus::where('name', 'LIKE', '%' . $query . '%')
+        ->orWhere('type', 'LIKE', '%' . $query . '%')->get();
+
+        return response()->json([
+            'query_results' => $search
+        ]);
+    }
 }
